@@ -97,7 +97,7 @@ super(): 부모 생성자
 종류		같은 클래스	같은패키지	자식클래스	다른패키지
 private		O		X		X		X
 defalut(생략)	O		O		X(O)		X
-protected		O		O		O		X(O)
+protected	O		O		O		X(O)
 public		O		O		O		O
 * ()는 상속관계인 경우
 
