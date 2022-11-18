@@ -1,0 +1,114 @@
+1. 클래스: 객체를 만들기 위한 설계
+class ClassName{
+ // 필드(멤버변수
+ // 생성자
+ // 메소드
+}
+
+객쳬: 고유속성이고 다른 객체와 구별된다. 클래스(설계도)-> 객체생성
+ClassNname c1 = new ClassName();
+
+2. 추상클래스: 자식클래스들의 필드와 메소드명을 통일하기 위함
+abstract class Animal{
+ // 필드
+ // 생성자
+ // 일반메소드 -> 리턴타입 존재(반환형 존재)
+ return_type methodName(매개변수){
+ // 실행문;
+ }
+ // 추상메소드 
+ abstract return_type methodName1(매개변수(없을수도있음));
+ // 실행값이 없어
+ abstract void sound();
+}
+
+class Dog extends Animal{
+ @override // 재정의 -> 구현한다.
+ void sound(){
+ // 실행문; 멍멍이는 야옹;
+ }
+}
+
+class Cat extends Animal{
+ @override
+ void sound()
+ 야옹이는 멍멍;
+}
+
+3. 상속(Inheritance)
+부모(필드&메소드)-> 자식에게 상속
+class Parent{
+ int num1;
+ Parent(int num1){ // 접근제한자는 넣을수잇지만, 리턴값은 넣을수 없엉
+  this.num1 = num1;
+ }
+ void method1();
+}
+class Child extends Parent{
+ int num2;
+ Child(int num1, int num2){
+  super(num1);
+  this.num1 = num2;
+ }
+}
+
+4. 접근제한자
+종류		같은 클래스	같은 패키지	자식클래스	다른패키지
+private		o		x		x		x
+default(생략)	o		o		x(o)		x
+protected	o		o		o		x(o)
+public		o		o		o		o
+()상속인경우
+
+5. 인터페이스(Interface) 맞닿은면? : '다양성'을 구현하기 위함
+추상클래스와 vs 인터페이스
+1. 추상클래스는 자식클래스들의 메소드명을 "통일"
+2. 인터페이스는 "다양성"을 구현하기 위함
+
+상속 보단 인터페이스를 선호..
+
+interface InterfaceName{ // 맨앞에 클래스가 아닌 인터페이스 기재
+ // 상수
+ // 추상메소드
+ // 디폴트메소드
+ // 정적메소드
+}
+예) public interface RemoteControl{
+ // 상수
+ static final (static: 고유화 final: 불변 즉 유일하고 공유되어야 한다, 생략가능) int MAX_VOLUME = 10;
+
+ // 추상메소드
+ abstract void turnOn(); (abstrac 생략가능. 인터페이스에는 일반메소드가 없거등)
+
+ // 디폴트메소드
+ default void setMute(){....}
+
+ // 정적메소드
+ static void changeBattery(){....}
+
+static 공유기능, 인스턴스(객체) 생성 없이 바로 사용가능
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
