@@ -1,0 +1,20 @@
+1. API(application program interface)
+Class(String)
+Interface
+String --> String.equals();
+
+main(){
+ String name = new String("홍길동");
+ if(name.equals("홍길동");){
+ }
+}
+
+내 프로그램 -> API -> 카카오페이 시스템 
+카카오 페이에서 제공해주는게 API
+그 API를 내가 활용해서 사용하는거
+
+String str1 = "abc";
+String str2 = new String("abc")
+
+str1 == str2 -> F
+str1.equals(str2) -> T 

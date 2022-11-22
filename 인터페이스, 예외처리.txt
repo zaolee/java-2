@@ -88,7 +88,7 @@ interface InterfaceName{ // 맨앞에 클래스가 아닌 인터페이스 기재
 
 static 공유기능, 인스턴스(객체) 생성 없이 바로 사용가능
 
-6. 인터페이스 선언
+6. 인터페이스 선언 (쓰는 이유 : 다형성)
 interface InterfaceName{
  // 상수
  // abstract 메소드
@@ -188,15 +188,47 @@ int[] num = new Array();
 for(int i = 0; i < num.length; i++){
  num[i] = i;
 }
-지금 배열 num은 0~9까지의 배열의 크기를 가지고 있는데, 10까지 넣어야되서 에러가 발생하는거.
+해당 배열의 크기와 인자값이 맞지않을때.
 
+1-3 NumberFormatException
+int num = "3" 
+해결 : int num = Integer.parsenInt("3"); // 3
+근데 int num = Integer.parsenInt("a3"); 이런경우는 a를 숫자로 변경하려고 할때 발생
 
+리소스 객체
+- 파일객체 (open/close) -> open은 try 부분에
+- 네트워크 객체 (open/close)
+- 데이터베이스 객체 (open/close)
 
+try{
+ // 리소스 객체 open();
+} catch (Exception e){
+ // 예외처리 코드; "접근할 수 없다.";
+} finally{
+ // 리소스 객체 close();
+}
 
+이거 finally 치기 귀찮으니까
+try(리소스 객체 오픈){
+ // 리소스 객체 
+} catch (Exception e){
+ // 예외처리 코드; "접근할 수 없다.";
+}
 
+public void method1(){
+ try{
+  method2();
+  method3();
+ } catch (Exception e){
+   // 예외처리
+ }
+}
 
+public void method2() throws Exception{
+ Class clazz = Class.forNAme("java.lang.String2")}
 
-
-
+public void method3() throws Exception{
+  // 예외발생가능 코드
+}
 
 
