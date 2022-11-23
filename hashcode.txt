@@ -1,0 +1,67 @@
+try{
+ // 예외 발생 가능한 코드;
+} catch(Exception e){
+ // 예외 처리 코드;
+} finally{
+ // 무조건 실행되는 코드;
+}
+
+trt(리소스 오픈;){
+ // 예외 발생 가능한 코드}
+
+void method1{
+ try{
+ throw new Exception
+ } catch(Exception e){
+ } finally{
+ }
+}
+이렇게 하기 귀찮으니까
+throws사용하기
+
+main(){
+try{
+ method1();
+ } catch (Exception e){
+ }
+}
+
+void method1 throws Exception {
+ throws new Exceptrion();
+}
+
+
+JRE(java runtime environment) = JVM + 기본API(오라클이 제공한 class파일들, String, System등..)
+JDK(java develop kit) = JRE + 개발도구(컴파일러)
+
+자료형 :
+- 기본형 : 정수(byte, short, char, int, long), 실수(float, double), 논리(boolean) -> stack
+기본형간에 형변환 가능
+
+- 참조형 : class(String, Byte, Short, Character, Integer, Float..), interface, 배열, 열거 -> heap
+참조형간에 형변환 : 부모-자식, 인터페이스로 클래스에서 구현 등..
+
+기본형 - 참조형 형변환? : 기본형 byte가 참조형 Byte로!.. 기본형 -> 참조형
+Integer num = 3; -> 3은 int형인데 Integer로 형변환 된거.
+메모리의 위치가 바뀜
+
+
+1. 주소값 vs hashCode값은 같은가? >> 다릅니다.
+2. hashCode() vs 주소값 
+ 주소값 = 메모리상에 객체가 저장된 위치일 뿐이였어요.
+ hashCode = 객체를 구분하기위한 정수값일 뿐이에요.
+		
+빠른 자료구조인 해시맵, 해시테이블이란게 있는대, 여기서 객체들을 구분하기위해 hashCode라는걸 사용하므로,
+개발자는 객체간에 구분이 잘 되도록, (= 충돌없이) key값을 정수형으로 잘 변환해야한다.
+
+
+
+
+
+
+
+
+
+
+
+
