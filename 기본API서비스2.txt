@@ -1,0 +1,22 @@
+Class clazz = Class.forName("java.lang.String"); // String의 Class 객체
+Object obj = clazz.newInstance(); // String 객체
+
+String str = "홍길동";
+str = new String("홍길동");
+byte[] bytes = new byte[100];
+str = new String(bytes);
+str = new String(bytes, 0, bytes.length);
+str = new String(bytes, 0, bytes.length, "UTF-8"); // 문자디코딩
+
+str.charAt(2); // "동" , (인덱스번호)
+str.equals("홍길동"); // equals는 return타입이 boolean타입, T, 문자열 비교
+str == "홍길동" // F, 주소값 비교
+byte[] bytes = str.getBytes("UTF-8"); // () 안을 비워두면 Os기본 문자셋으로 인코딩됨.
+
+String oldStr = "자바 프로그래밍";
+String newStr = oldStr.replace("자바", "JAVA"); // "JAVA 프로그래밍" 
+// 여기서 oldstr의 내용을 바꾸는거 같아보이지만,  "JAVA 프로그래밍" 을 힙메모리에 새롭게 생성하는거지롱
+// 즉 힙메모리안에는 "자바 프로그래밍", "JAVA 프로그래밍" 둘다 존재, 스택영역인 oldStr, newStr은 각자 다른 객체의 주소를 가르키고 있는것.
+// replace = 대체하다. 즉 바뀌는게 아닌, 새로운걸 갔다가 대체하는거
+
+valueOf() // 형변환, 기본형 -> 참조형
