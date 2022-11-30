@@ -1,0 +1,38 @@
+작업스레드 생성
+1. 스레드 클래스로부터 직접 생성
+// Runnable 인터페이스 구현 클래스
+class Task implements Runnable{
+ @override
+ void run(){
+  // 실행문
+ }
+}
+Runnable task = new Task(); // 자동형변환, 인터페이스 = 구현객체
+thread thread = new Thread(task); // 작업스레드 생성
+thread.start();
+
+2. 스레드를 상속받은 하위클래스로부터 생성
+class WorkerThread extends Thread{
+ @override
+ void run(){
+  // 실행문
+ }
+}
+
+Thread thread = new WorkerThread(); // 자동형변환, 작업스레드 생성.
+thread.start();
+
+// 제네릭 타입의 목적은 다양한 타입을 사용하면서 형변환을 하지않기 위함
+// Class<T>, Interface<T>
+public class Box<T>{
+ private T object;
+ public void set(T object){
+  this.object = object;
+ }
+ public T get(){
+ return object;
+ }
+}
+
+Box<Student>box = new Box<Student>();
+box.set(new Student());
