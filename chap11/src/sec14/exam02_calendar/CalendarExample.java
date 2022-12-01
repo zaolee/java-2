@@ -4,7 +4,14 @@ import java.util.*;
 
 public class CalendarExample {
 	public static void main(String[] args) {
+		// Calendar now = new Calendar(); -> Calendar 클래스는 객체 생성 불가(추상클래스라)
+		// 1. Calendar.getInstance()
+		// 2. Calendar 클래스의 자식 클래스인 GregorianCalendar 객체를 생성하여 Calendar타입에 형변환시킨다.
 		Calendar now = Calendar.getInstance();
+		GregorianCalendar now2 = new GregorianCalendar();
+		
+		// Calendar now2 = new GregorianCalendar(); 이렇게 생성 가능.
+		
 		
 		int year    = now.get(Calendar.YEAR);                
 		int month  = now.get(Calendar.MONTH) + 1;          

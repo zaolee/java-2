@@ -3,7 +3,7 @@ package sec13.exam01_math;
 public class MathExample {
 	public static void main(String[] args) {
 		int v1 = Math.abs(-5);
-		double v2 = Math.abs(-3.14);
+		double v2 = Math.abs(-3.14); // Àý´ë°ª
 		System.out.println("v1=" + v1);
 		System.out.println("v2=" + v2);
 

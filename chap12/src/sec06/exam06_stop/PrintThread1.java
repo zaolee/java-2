@@ -1,7 +1,7 @@
 package sec06.exam06_stop;
 
 public class PrintThread1 extends Thread {
-	private boolean stop;
+	private boolean stop; // default°ª : false -> true 
 	
 	public void setStop(boolean stop) {
 	  this.stop = stop;

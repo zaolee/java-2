@@ -1,5 +1,6 @@
 package sec05.exam01_state;
 
+// 하위클래스(2번째방법, 상속받은걸로..)
 public class StatePrintThread extends Thread {	
 	private Thread targetThread;
 
