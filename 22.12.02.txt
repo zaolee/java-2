@@ -1,0 +1,32 @@
+1. List
+- 순서(인덱스) 있다.
+- 값이 중복 가능하다.
+- 구현 클래스 : ArrayList, vetcor, LinkedList
+
+List<String> list = new ArrayList<String>();
+List<String> list = Arrays.List("홍길동", "유재석");
+List<String> list = new LinkedList<String>();
+
+2. Set
+- 순서(인덱스) 없다.
+- 값이 중복될 수 없다. 논리적동등(hashCode(), equals()가 같음)
+- 하나의 null을 허용한다.
+- 구현 클래스 : HashSet, TreeSet
+
+Set<String> set = new HashSet<String>();
+
+3. Math.random() vs Random
+0.0 <= Math.random(), 임의의 실수 < 1.0
+0 <= Random.nextInt(n), 임의의 정수 < n
+
+ex)
+Random r = new Random();
+0 <= r.nextInt(45) < 45 // 0~44의 임의의 정수
+1 <= r.nextInt(45)+1 < 46 0~45의 임의의 정수
+
+5. Map
+이름 : 소연 (Key : value 형식) *key는 중복되지 않아. 이름이 두개는 아니잖아?
+나이 : 26 *근데, value값인 중복될수 있음. 주소:용인시, 고향:용인시 이렇게./. 
+주소 : 용인시
+
+이런 자료(데이터)를 보관할때 용이 
