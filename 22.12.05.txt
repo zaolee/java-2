@@ -1,0 +1,54 @@
+컬렉션 프레임워크(자료구조)
+
+List
+- 중복허용O
+- 인덱스로 관리하여 순서있음.
+- 구현클래스: ArrayList, Vector, LinkedList
+- List<String>list = new ArrayList<>();
+- 게시판 목록
+ class Board(){
+  String writer;
+  String title;
+  String content;
+  Date regDate;
+  int readCnt;
+ }
+ Board b1 = new Board(); // 객체생성
+ Board b2 = new Board();
+ List<Board> list = new ArrayList<Board>();
+ list.add(b1);
+ list.add(b2);
+
+Set
+- 중복허용X
+- 순서X
+- Null 하나 허용
+- 구현클래스: Hash, TreeSet
+- Set<String> set = new HashSet<String>();
+
+Map
+- 키와 값의 쌍(Map.Entry)으로 구성
+- 키는 중복허용X, 값을 중복을 허용함.
+- HashMap, Properties, Hashtable, TreeMap
+- Properties : 키와 값이 String타입.
+- Map<String, String> map = new HashMap<String, String>();
+
+개인 pc
+Browser -> http(plain 파라미터로 전달) vs https(파라미터가 암호화되어 전송) request(요청) -> 서버로 // HTML, CSS, javascript
+
+서버 
+web Application Server(WAS) // java, jsp(spring, mybatis) -> JavaServlet클래스(http 프로토콜을 지원하는 자바 클래스) -> service -> DAO -> DB //sql
+DB -> DAO -> service -> JSP(java server page) -> response(응답) ->  request -> 브라우저
+브라우져와 데이터를 주고받는, 통신하는 : 프로토콜
+비지니스 로직, (사용자의) 요청처리하는 로직이 있는 자바 클래스 : service
+데이타 조작(데이터를 생성, 읽고, 업데이트, 삭제등..)하는 자바 클래스(data access object): DAO
+화면 생성 : JSP(java server page)
+
+백엔드 : 자바, 데이타베이스, jsp, spring, mybatis 필수
+
+IO(Input/Output) 패키지
+구분		바이트 기반			문자 기반
+	입력스트림	출력스트림	입력스트림	출력스트림
+최상위	InputStream	OutStream	Reader		Writer
+하위	XXXInputStream	XXXOutStream	XXXReader	XXXWriter
+예)	FileInputStream	FileOutStream	FileReader	FileReader
