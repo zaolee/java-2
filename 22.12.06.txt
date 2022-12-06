@@ -1,0 +1,45 @@
+List
+- 인덱스로 순서 유지
+- 중복허용
+- ArrayList, Vector, LinkedList
+- 객체생성: List<E> list = new ArrayList<E>();
+Set
+- 중복허용 X
+- 순서없음(경품단지..)
+- null을 하나 포함 허용
+- HashSet, TreeSet
+- Set<E> set = new HashSet<E>();
+Map
+- Key와 Value로 구성된 Map.Entry
+- Key는 중복X, Value는 중복 허용
+- HashMap, Hashtable, Properties<String, String>
+- Map<K, V> map = new HashMap<K,V>();
+- properties properties = new Properties (애초에 Properties가 구현객체임)
+
+IO(Input, Output) API
+구분		바이트기반(1byte)			문자기반(2byte)
+	입력스트림	출력스트림	입력스트림	출력스트림
+최상위	InputStreem	OutputStreem	Reader		Writer	
+하위	XXXInputStreem	XXXOutputStreem	XXXReader	XXXWriter
+예)	FileInPutStreem	FileOutputStreem	FileReader	FileWriter
+			PrintStreem
+
+추상클래스: "통일" 자식클래스의 필드와 메소드명 일치하기 위함.
+// 필드
+// 생성자
+// 일반메소드
+// 추상메소드
+
+인터페이스: "다형성" 객체교환성을 높여 다양한 실행 결과를 얻음.
+// 상수
+// 추상메소드
+// static메소드
+// defalut메소드
+
+OS
+M/F(메인프레임) : 하나의 시스템 안에 여러가지 프로그램?? 저안에 몰려있는거.(IBM에서 만듦), 특정업계에서만 사용
+DS(분산시스템) : 서버 쪼개기 
+- Unix(1970) <- server용(최다사용), File separator(구별자) -> / ex) /home/user2/etc
+- MS-DOS(1985)->Windows(1993) <- PC(personalcomputer)/ server , File separator(구별자) -> \ ex) c:\dec\
+- Apple Mac(1990) <- PC(Unix 기반) /
+- Linux(1990) <- pc or server /
