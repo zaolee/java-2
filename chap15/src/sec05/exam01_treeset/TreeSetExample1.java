@@ -32,7 +32,7 @@ public class TreeSetExample1 {
 		System.out.println("85점 이거나 바로 위의 점수: " + score + "\n");
 		
 		while(!scores.isEmpty()) {
-			score = scores.pollFirst();
+			score = scores.pollFirst(); // 첫번째꺼 하나씩 빼주세요~
 			System.out.println(score + "(남은 객체 수: " + scores.size() + ")");
 		}
 	}

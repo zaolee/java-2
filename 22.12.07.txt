@@ -1,0 +1,74 @@
+ IO 패키지(java.io.*)
+
+구분	    바이트기반스트림(1byte)	                문자기반스트림(2byte)
+	입력스트림	출력스트림	입력스트림	출력스트림
+최상위	InputStream	OutputStream	Reader		Writer
+하위	XXXInputStream	XXXOutputStream	XXXReader	XXXWriter
+	FileInputStram	FileOutputStream	FileReader	FileWriter
+			PrintStream
+
+InputStream is = new FileInputStream("C:/temp/test.txt"); // Java <- File 에서 바이트기반(1바이트) data 읽어온다.
+is.read();
+is.close();
+
+OutputStream os = new FileOutputStream("C:/temp/teat.txt"); // Java -> File에 data 저장한다.
+os.flush();
+os.close();
+
+Reader reader = new FileReader("C:/temp/test.txt"); // Java <- File에서 문자기반(2바이트)으로 data 읽어온다.
+reader.read();
+read,close();
+
+Writer writer = new FileWriter("C:/temp/test.txt"); // Java -> File에 문자기반으로 data를 저장한다.
+Writer.write();
+writer.flush();
+writer.close();
+
+표준IO장치에 주로 입력장치 : 키보드, 파일, 프로그램
+표준IO장치에 주로 출력장치 : 화면, 파일, 프로그램
+프로그램 뭔데;; -> 네트워크를 통해 프로그램을 프로그램 불러올때??
+
+콘솔 : 시스템을 사용하기 위해 키보드로 입력을 받고 화면으로 출력하는 SW
+- System.in //필드, InputStream : 바이트기반의 입력스트림
+- 표준입력장치에서 입력받는 방법 1
+InputStream is = System.in;
+is.read(); // 표준입력장치(키보드)에서 바이트로 입력받는다.
+
+- System.out : 필드, System.out.println() // 콘솔에 출력하다. printStream(OutStream의 하위클래스로 바이트기반의 출력 스트림) 클래스의 out은 객체
+
+- console : 클래스, 입력된 문자열을 출력(byte가 아닌 문자열로)
+- 표준입력장치에서 입력받는 방법 2
+Console console = System.console();
+String str = console.readLine(); // 표준입력장치(키보드)에서 문자열로 입력받는다.
+
+- Scanner : 클래스 : 콘솔의 단점인 문자열만 된느것이 아닌 다양하게 적용가능.
+- 표준입력장치에서 입력받는 방법 3
+Scanner scanner = new Scanner(System.in);
+String str = scanner.nextLine(); // 문자열
+int num = scanner.nextInt(); // 정수형
+double inputDouble = scanner.nextDouble(); // 실수형
+
+File file = new File("C:\temp\test.txt");
+
+문자변환 :
+InputStream -> Reader
+바이트기반 -> 문자기반
+= 보조스트림
+
+response time:
+ot
+disk io s - 응답시간의 대부분 차지
+network io s - 응답시간의 대부분 차지
+w
+디스크 작업때문에 느린거.. -> 조금이라도 빠르게 이용 : 버퍼사용
+
+[절대 경로 vs 상대 경로(path)]
+
+C:\Users\user2>cd.. // 이전으로 돌아갓, 상대경로
+
+C:\Users>cd user2 // 다시 user2로 돌아간거
+
+C:\Users\user2>cd c:\Users // 절대 결로
+
+c:\Users>
+이클립스는 절대경로로 써야 읽혀짐 주의.
