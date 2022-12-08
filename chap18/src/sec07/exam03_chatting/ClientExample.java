@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
+import javafx.stage.Stage; // 자바11부터는 지원이 되지않음 (따로 라이브러리 다운받아서 사용 proper~ -> buildpath)
 
 public class ClientExample extends Application {
 	Socket socket;
@@ -25,7 +25,7 @@ public class ClientExample extends Application {
 			public void run() {
 				try {
 					socket = new Socket();
-					socket.connect(new InetSocketAddress("localhost", 5001));
+					socket.connect(new InetSocketAddress("192.168.30.199", 5001));
 					Platform.runLater(() -> {
 						displayText("[연결 완료: " + socket.getRemoteSocketAddress() + "]");
 						btnConn.setText("stop");

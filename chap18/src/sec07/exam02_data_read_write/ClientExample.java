@@ -12,14 +12,15 @@ public class ClientExample {
 		try {
 			socket = new Socket();
 			System.out.println( "[연결 요청]");
-			socket.connect(new InetSocketAddress("localhost", 5001));
+			socket.connect(new InetSocketAddress("192.168.30.199", 5001)); // 이거 쌤 IP임
+			// 192.168.30.193 -> 이게 내가쓰는 컴터 IP
 			System.out.println( "[연결 성공]");
 			
 			byte[] bytes = null;
 			String message = null;
 			
 			OutputStream os = socket.getOutputStream();
-			message = "Hello Server";
+			message = "저는 2소연입니다.";
 			bytes = message.getBytes("UTF-8");
 			os.write(bytes);
 			os.flush();

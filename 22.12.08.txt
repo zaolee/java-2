@@ -1,0 +1,18 @@
+java.io 패키지
+구분		바이트기반(1byte)			문자기반(2byte)
+	입력스트림	입력스트림	입력스트림	출력스트림
+최상위	InputStream	OutputStream	Reader		Writer
+하위	XXXInputStream	XXXOutputStream	XXXReader	XXXWriter
+	FileInputStream	FileOutStream	FileReader	FileWriter
+			PrintStream
+
+InputStream is = new FileInputStream("c:\temp\file.txt"); // 바이트기반 스트림
+Reader reader = new InputStreamReader(is); // 문자기반 스트림 (바이트 -> 문자 보조스트림사용)
+reader.read();
+reader.close();
+
+InputStream is = System.in; // 바이트기반 스트림
+InputStreamReader reader = new InputStreamReader(is); // 문자기반 스트림 = Reader
+BufferedReader br = new BufferedReader(reader); // 성능보조 스트림 (빨리져)
+
+--module-path "C:\Program Files\Java\jdk-11.0.17\lib\javafx-sdk-11\lib" --add-modules=javafx.fxml,javafx.controls
